@@ -43,8 +43,10 @@ main:BEGIN
     DECLARE totaDebt DECIMAL(65, 2);
     DECLARE hasPaid DECIMAL(65, 2);
     DECLARE pendingDebt DECIMAL(65, 2);
-    DECLARE cur_parseClients CURSOR FOR SELECT codigo_cliente FROM cliente;
-    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done= TRUE;
+    DECLARE cur_parseClients CURSOR FOR 
+        SELECT codigo_cliente FROM cliente;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND 
+        SET done= TRUE;
 
     OPEN cur_parseClients;
 
