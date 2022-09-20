@@ -15,3 +15,18 @@ END//
 
 DELIMITER ;
 --
+
+Ejercicio 3
+DROP PROCEDURE IF EXISTS obtener_numero_empleados;
+DELIMITER //
+
+CREATE PROCEDURE obtener_numero_empleados(codigo VARCHAR(20))
+BEGIN
+
+	SELECT COUNT(codigo_oficina) AS numero_de_empleados FROM empleado WHERE codigo_oficina = codigo;
+	
+END //
+
+DELIMITER ;
+
+CALL obtener_numero_empleados ("TAL-ES");	
